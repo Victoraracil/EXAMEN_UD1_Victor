@@ -37,7 +37,7 @@ public class EXAMEN {
         String nombre = entrada.next();
         System.out.println("La obra de " + nombre);
 
-        while (par1 == 0 || par2 == 0 || azu1 == 0 || azu2 == 0 ){ //control para no introducir letras y pedir un valor valido
+        while (par1 <= 0 || par2 <= 0 || azu1 <= 0 || azu2 <= 0 ){ //control para no introducir letras y pedir un valor valido
             try{
 
                 System.out.println("Introduce el ancho de la pared:"); //PARED
@@ -49,6 +49,11 @@ public class EXAMEN {
                 azu1 = entrada.nextInt();
                 System.out.println("Introduce el largo del azulejo:");
                 azu2 = entrada.nextFloat();
+
+                if (par1 <= 0 || par2 <= 0 || azu1 <= 0 || azu2 <= 0 ){
+                    System.out.println("Los numeros introducidos no pueden ser ni 0 ni negativos");
+                    par1 = 0;
+                }
 
             }catch (NumberFormatException | InputMismatchException | ArithmeticException e) {
                 System.out.println("ERROR: introduce un numero valido "); //Error si no se introduce un numero
